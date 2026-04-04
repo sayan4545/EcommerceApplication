@@ -1,6 +1,8 @@
 package com.dev.sayan.algocamp.ecommercespring01.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 

@@ -8,4 +8,5 @@ public interface DProductService {
     ProductDto createProduct(ProductDto dto);
     ProductDto getProductById(Long id);
     List<ProductDto> getAllProducts();
+    Boolean deleteProductById(Long id);
 }

@@ -29,10 +29,12 @@ public class DProductServiceImpl implements DProductService{
 
     @Override
     public ProductDto getProductById(Long id) {
-        if(!isExistsById(id)) throw new RuntimeException("No product exist with this id "+ id);
-        Product product = productRepository.findById(id).get();
-        return productMapper.toProductDto(product);
-
+//        if(!isExistsById(id)) throw new RuntimeException("No product exist with this id "+ id);
+//        Product product = productRepository.findById(id).get();
+//        return productMapper.toProductDto(product);
+        Product retrievedProduct = productRepository.findById(id)
+                .orElseThrow(()-> new RuntimeException("No product with this id "+ id));
+        return productMapper.toProductDto(retrievedProduct);
 
     }
 
@@ -42,5 +44,11 @@ public class DProductServiceImpl implements DProductService{
                 .stream()
                 .map(productMapper::toProductDto)
                 .toList();
+    }
+
+    public Boolean deleteProductById(Long id){
+        if (!isExistsById(id)) return false;
+        productRepository.deleteById(id);
+        return true;
     }
 }

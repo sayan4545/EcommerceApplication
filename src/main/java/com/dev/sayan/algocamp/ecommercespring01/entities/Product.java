@@ -1,9 +1,7 @@
 package com.dev.sayan.algocamp.ecommercespring01.entities;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
 import lombok.*;
-
 
 
 @Entity

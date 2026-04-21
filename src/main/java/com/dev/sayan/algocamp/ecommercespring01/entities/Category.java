@@ -1,9 +1,8 @@
 package com.dev.sayan.algocamp.ecommercespring01.entities;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import lombok.*;
-
-import java.util.List;
 
 @Entity
 @Getter

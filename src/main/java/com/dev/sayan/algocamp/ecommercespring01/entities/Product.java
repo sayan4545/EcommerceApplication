@@ -1,10 +1,9 @@
 package com.dev.sayan.algocamp.ecommercespring01.entities;
 
 import jakarta.persistence.Entity;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import jakarta.persistence.ManyToOne;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
+
 
 
 @Entity
@@ -24,6 +23,7 @@ public class Product extends BaseEntity{
     private String category;
     private String brand;
     private Boolean popular;
+
 
 
 }

@@ -2,12 +2,12 @@ package com.dev.sayan.algocamp.ecommercespring01.gateway;
 
 import com.dev.sayan.algocamp.ecommercespring01.dto.CategoryDto;
 import com.dev.sayan.algocamp.ecommercespring01.dto.FakeStoreCategoryResponseDto;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 import java.util.List;
+
 @Service("restTemplimpl")
 
 public class CategoryGatewayResttemplateImpl implements CategoryGateway{

@@ -1,7 +1,6 @@
 package com.dev.sayan.algocamp.ecommercespring01.gateway.api;
 
 import com.dev.sayan.algocamp.ecommercespring01.dto.FakeStoreProductDto;
-import com.dev.sayan.algocamp.ecommercespring01.dto.ProductDto;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;

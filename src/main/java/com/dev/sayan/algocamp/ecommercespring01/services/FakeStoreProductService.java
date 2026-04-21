@@ -4,7 +4,6 @@ import com.dev.sayan.algocamp.ecommercespring01.dto.ProductDto;
 import com.dev.sayan.algocamp.ecommercespring01.gateway.ProductGateway;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 @Service
 public class FakeStoreProductService implements IProductService{
 

@@ -9,8 +9,6 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.util.List;
 
-import static java.util.Arrays.stream;
-
 @Service
 @Primary
 public class FakeStoreCategoryGateway implements CategoryGateway{

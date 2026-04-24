@@ -19,7 +19,7 @@ public class ProductMapper {
                 .model(product.getModel())
                 .price(product.getPrice())
                 .popular(product.getPopular())
-                .category(product.getCategory())
+                .categoryId(product.getCategory().getId())
                 .brand(product.getBrand())
                 .build();
         return dto;
@@ -35,7 +35,6 @@ public class ProductMapper {
                 .discount(dto.getDiscount())
                 .model(dto.getModel())
                 .popular(dto.getPopular())
-                .category(dto.getCategory())
                 .price(dto.getPrice())
                 .brand(dto.getBrand())
                 .build();

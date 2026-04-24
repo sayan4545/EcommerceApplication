@@ -1,6 +1,6 @@
 package com.dev.sayan.algocamp.ecommercespring01.entities;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.*;
 
 
@@ -18,7 +18,9 @@ public class Product extends BaseEntity{
     private String description;
     private int discount;
     private String model;
-    private String category;
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = "category_id",referencedColumnName = "id")
+    private Category category;
     private String brand;
     private Boolean popular;
 

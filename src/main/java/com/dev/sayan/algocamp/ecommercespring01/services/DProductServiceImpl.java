@@ -2,7 +2,9 @@ package com.dev.sayan.algocamp.ecommercespring01.services;
 
 import com.dev.sayan.algocamp.ecommercespring01.adapters.ProductMapper;
 import com.dev.sayan.algocamp.ecommercespring01.dto.ProductDto;
+import com.dev.sayan.algocamp.ecommercespring01.entities.Category;
 import com.dev.sayan.algocamp.ecommercespring01.entities.Product;
+import com.dev.sayan.algocamp.ecommercespring01.repositories.CategoryRepository;
 import com.dev.sayan.algocamp.ecommercespring01.repositories.ProductRepository;
 import org.springframework.stereotype.Service;
 
@@ -12,13 +14,19 @@ import java.util.List;
 public class DProductServiceImpl implements DProductService{
     private final ProductMapper productMapper;
     private final ProductRepository productRepository;
-    public DProductServiceImpl(ProductMapper productMapper, ProductRepository productRepository){
+    private final CategoryRepository categoryRepository;
+    public DProductServiceImpl(ProductMapper productMapper, ProductRepository productRepository, CategoryRepository categoryRepository){
         this.productMapper = productMapper;
         this.productRepository = productRepository;
+        this.categoryRepository = categoryRepository;
     }
     @Override
     public ProductDto createProduct(ProductDto dto) {
-        Product productToBeCreated = productMapper.toProduct(dto);
+        //if (!ifCategoryExists(dto.getCategoryId())) throw new RuntimeException("Category do nit exists");
+        Category category = categoryRepository
+                .findById(dto.getCategoryId()).orElseThrow(()->
+                        new RuntimeException("Category do not exist"));
+        Product productToBeCreated = productMapper.toProduct(dto,category);
         productRepository.save(productToBeCreated);
         return dto;
     }

@@ -2,6 +2,7 @@ package com.dev.sayan.algocamp.ecommercespring01.adapters;
 
 
 import com.dev.sayan.algocamp.ecommercespring01.dto.ProductDto;
+import com.dev.sayan.algocamp.ecommercespring01.entities.Category;
 import com.dev.sayan.algocamp.ecommercespring01.entities.Product;
 import org.springframework.stereotype.Component;
 
@@ -25,7 +26,7 @@ public class ProductMapper {
         return dto;
     }
 
-    public Product toProduct(ProductDto dto){
+    public Product toProduct(ProductDto dto, Category category){
         Product product = Product
                 .builder()
                 .colour(dto.getColour())
@@ -35,6 +36,7 @@ public class ProductMapper {
                 .discount(dto.getDiscount())
                 .model(dto.getModel())
                 .popular(dto.getPopular())
+                .category(category)
                 .price(dto.getPrice())
                 .brand(dto.getBrand())
                 .build();
